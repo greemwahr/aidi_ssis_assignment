@@ -1,0 +1,1867 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/12/2024 4:22:11 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WHITEELEPHANT"
+  DTS:CreatorName="WHITEELEPHANT\sherif"
+  DTS:DTSID="{8B843AAA-42D4-48ED-A792-9DE38E51D7A3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="active_employee"
+  DTS:PackageType="5"
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{86D36ABF-632E-4174-A4BB-01A574831C46}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ActiveEmployeeCM]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{180C0B74-7B02-45F8-9326-2B7A007AA688}"
+      DTS:ObjectName="ActiveEmployeeCM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sheri\Downloads\Dataset\ActiveEmployee.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HighSalaryCM]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{79665558-6BBF-4603-B704-9EF2A9C38CED}"
+      DTS:ObjectName="HighSalaryCM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sheri\Downloads\Dataset\Outputs\HighSalary.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{066AC30D-A456-4DCF-A7B4-10A73B36F91B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{F13F2041-A359-4BD7-8312-695DDE80B943}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{3437027E-4D8A-416E-AE8F-BE92DF2E504D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOB"
+              DTS:DTSID="{ECD0D9E9-5716-4C87-A002-61250C1981D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{DBF84A1F-CCDF-4142-B309-C7782C70947E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Salary"
+              DTS:DTSID="{E21773F2-EB96-494A-A6D0-3DA198518CC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{4DCF0996-0525-4F7E-B8FA-8634F504E9F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country Code"
+              DTS:DTSID="{BEA7046B-B4BF-4303-B405-1464AEF2F91C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address"
+              DTS:DTSID="{68A66928-3135-469B-827B-C54359F223D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZipCode"
+              DTS:DTSID="{8B00B0F1-2437-4A3A-B604-76450DF033D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeName"
+              DTS:DTSID="{6166562D-8A55-4F22-986D-45D7E9097068}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{4A147055-CD39-49FA-AACC-2006F9800524}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender "
+              DTS:DTSID="{03149B0A-C92F-4378-8581-ECEA5F43A689}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LowSalaryCM]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3D90FF56-749B-48E9-8952-889E76CC40B0}"
+      DTS:ObjectName="LowSalaryCM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sheri\Downloads\Dataset\Outputs\LowSalary.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{77B68393-9315-480D-95ED-9E18CE5FE322}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{0053D2CB-6060-4BED-B297-1DDDABFDCE02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{539466CC-0421-44BD-9A9E-995CC18465B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOB"
+              DTS:DTSID="{823C3725-1E2D-4162-BE42-2A0B950D506E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{70C100F7-3A28-4704-BE39-630F304D3C67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Salary"
+              DTS:DTSID="{CC9A05B4-3AAD-4A60-A048-C60A1C73D8DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{E984A868-E067-4C21-A068-361C6B93670B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country Code"
+              DTS:DTSID="{3735DC3E-4E19-4631-BFBA-7DD0F4290C59}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address"
+              DTS:DTSID="{FDB998D5-0F59-4BAA-994C-F4572BF20930}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZipCode"
+              DTS:DTSID="{3EA65DBD-651C-4C26-80C0-D6C00A725883}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="511"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeName"
+              DTS:DTSID="{5150C725-0368-4951-A37D-B1FCE1BBBFE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{A9852DFC-119C-4A05-BC35-43B9F58726B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender."
+              DTS:DTSID="{0115D8E6-D749-4E9E-B865-119179588833}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MediumSalaryCM]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FDB465B2-5211-4806-B0FC-181691B69754}"
+      DTS:ObjectName="MediumSalaryCM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sheri\Downloads\Dataset\Outputs\MediumSalary.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{4CAF657B-C443-4F7B-A65C-7F2E3C4DAED9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{E8F594D2-EFA0-45D8-931E-BA9143E8ABD6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{E30E0E48-221C-4DA4-959F-14F17241DC3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOB"
+              DTS:DTSID="{D124003A-A487-463B-8CCA-99825B202EE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{94E2FDCB-8DFF-4AAF-9177-BE70D41AB4A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Salary"
+              DTS:DTSID="{0F5A0851-846D-4613-865B-62AB22134BB0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{A83C451B-ED03-4875-BDFB-2099E11CDF18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country Code"
+              DTS:DTSID="{3D5C618C-6F19-4768-ADA1-B0B3548035A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address"
+              DTS:DTSID="{0211D3F8-8527-464C-ABED-58C89F5E5810}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZipCode"
+              DTS:DTSID="{3F2E702A-D1C4-447A-8079-887251D8FC92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="511"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeName"
+              DTS:DTSID="{53961AC9-7441-4C39-A45E-5F13853BBBF6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{A747F0FA-2DEB-494F-A3AC-E0FD4ED2A62D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender."
+              DTS:DTSID="{9FE9C507-2960-498F-ADE9-7065C1CB17FF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ActiveEmployeeFlow"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{981A826D-EC8B-4264-8E06-EC92ECA8E681}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ActiveEmployeeFlow"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ActiveEmployeeFlow\Active Employee"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Active Employee"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ActiveEmployeeFlow\Active Employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ActiveEmployeeCM]"
+                  connectionManagerRefId="Package.ConnectionManagers[ActiveEmployeeCM]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[ID]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[FirstName]"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[LastName]"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[DOB]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[DOB]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[DOB]"
+                      name="DOB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Department]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Department]"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Department]"
+                      name="Department"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Salary]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]"
+                      name="Salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Gender]"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Country Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Country Code]"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Country Code]"
+                      name="Country Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Address]"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Address]"
+                      name="Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ZipCode]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[ZipCode]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ZipCode]"
+                      name="ZipCode"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[ID]"
+                      dataType="r8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="255"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[DOB]"
+                      dataType="date"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Department]"
+                      dataType="wstr"
+                      length="255"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Salary]"
+                      dataType="r8"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Country Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country Code" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].ExternalColumns[ZipCode]"
+                      dataType="r8"
+                      name="ZipCode" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[ID]"
+                      dataType="r8"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[DOB]"
+                      dataType="date"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[DOB]"
+                      name="DOB" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Department]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Department]"
+                      name="Department" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Salary]"
+                      dataType="r8"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Salary]"
+                      name="Salary" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Country Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Country Code]"
+                      name="Country Code" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[Address]"
+                      name="Address" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[ZipCode]"
+                      dataType="r8"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[ZipCode]"
+                      name="ZipCode" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ActiveEmployeeFlow\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ActiveEmployeeFlow\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Conditional Split.Inputs[Conditional Split Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[HighSalary]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="HighSalary"
+                  synchronousInputId="Package\ActiveEmployeeFlow\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]} &gt; 500000</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Salary &gt; 500000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[MediunSalary]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="MediunSalary"
+                  synchronousInputId="Package\ActiveEmployeeFlow\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]} &gt; 250000 &amp;&amp; #{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]} &lt;= 500000</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Salary &gt; 250000 &amp;&amp; Salary &lt;= 500000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[LowSalary]"
+                  description="Output 3 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="LowSalary"
+                  synchronousInputId="Package\ActiveEmployeeFlow\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]} &lt;= 250000</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Salary &lt;= 250000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\ActiveEmployeeFlow\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\ActiveEmployeeFlow\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ActiveEmployeeFlow\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FirstName"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LastName"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Gender"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input].Columns[CleanedAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Address]"
+                      name="CleanedAddress"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Address]},",",""),"，","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE(CleanedAddress,",",""),"，","")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[EmployeeName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="511"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[EmployeeName]"
+                      name="EmployeeName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[FirstName]} + " " + #{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[LastName]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">FirstName + " " + LastName</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEDIFF]("yyyy",#{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[DOB]},[GETDATE]())</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEDIFF("yyyy",DOB,GETDATE())</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Gender.]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Gender.]"
+                      name="Gender."
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,10,1252)(#{Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Gender]} == "M" ? "Male" : "Female")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,10,1252)(Gender == "M" ? "Male" : "Female")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ActiveEmployeeFlow\High Salary CSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2057"
+              name="High Salary CSV"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ActiveEmployeeFlow\High Salary CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[HighSalaryCM]"
+                  connectionManagerRefId="Package.ConnectionManagers[HighSalaryCM]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[Department]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Department"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Department]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[Country Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country Code"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Country Code]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Country Code]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[ZipCode]"
+                      cachedDataType="r8"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ZipCode]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ZipCode]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[EmployeeName]"
+                      cachedDataType="wstr"
+                      cachedLength="511"
+                      cachedName="EmployeeName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[EmployeeName]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[EmployeeName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].Columns[Gender.]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Gender."
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender ]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Gender.]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Country Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country Code" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ZipCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZipCode" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[EmployeeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmployeeName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender " />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\ActiveEmployeeFlow\Low Salary CSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2057"
+              name="Low Salary CSV"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ActiveEmployeeFlow\Low Salary CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LowSalaryCM]"
+                  connectionManagerRefId="Package.ConnectionManagers[LowSalaryCM]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[Department]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Department"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Department]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[Country Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country Code"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Country Code]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Country Code]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[ZipCode]"
+                      cachedDataType="r8"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ZipCode]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ZipCode]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[EmployeeName]"
+                      cachedDataType="wstr"
+                      cachedLength="511"
+                      cachedName="EmployeeName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[EmployeeName]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[EmployeeName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].Columns[Gender.]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Gender."
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender.]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Gender.]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      dataType="r8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="255"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      dataType="date"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      dataType="wstr"
+                      length="255"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      dataType="r8"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Country Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country Code" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ZipCode]"
+                      dataType="r8"
+                      name="ZipCode" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[EmployeeName]"
+                      dataType="wstr"
+                      length="511"
+                      name="EmployeeName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender.]"
+                      dataType="wstr"
+                      length="6"
+                      name="Gender." />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\ActiveEmployeeFlow\Medium Salary CSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2057"
+              name="Medium Salary CSV"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MediumSalaryCM]"
+                  connectionManagerRefId="Package.ConnectionManagers[MediumSalaryCM]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[Department]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Department"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Department]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Salary]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[Country Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country Code"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Country Code]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Country Code]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[ZipCode]"
+                      cachedDataType="r8"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ZipCode]"
+                      lineageId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output].Columns[ZipCode]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[EmployeeName]"
+                      cachedDataType="wstr"
+                      cachedLength="511"
+                      cachedName="EmployeeName"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[EmployeeName]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[EmployeeName]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].Columns[Gender.]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Gender."
+                      externalMetadataColumnId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender.]"
+                      lineageId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output].Columns[Gender.]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      dataType="r8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="255"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      dataType="date"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      dataType="wstr"
+                      length="255"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      dataType="r8"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Country Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country Code" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[ZipCode]"
+                      dataType="r8"
+                      name="ZipCode" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[EmployeeName]"
+                      dataType="wstr"
+                      length="511"
+                      name="EmployeeName" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input].ExternalColumns[Gender.]"
+                      dataType="wstr"
+                      length="6"
+                      name="Gender." />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ActiveEmployeeFlow.Paths[Derived Column Output]"
+              endId="Package\ActiveEmployeeFlow\Conditional Split.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\ActiveEmployeeFlow\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\ActiveEmployeeFlow.Paths[Excel Source Output]"
+              endId="Package\ActiveEmployeeFlow\Derived Column.Inputs[Derived Column Input]"
+              name="Excel Source Output"
+              startId="Package\ActiveEmployeeFlow\Active Employee.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\ActiveEmployeeFlow.Paths[HighSalary]"
+              endId="Package\ActiveEmployeeFlow\High Salary CSV.Inputs[Flat File Destination Input]"
+              name="HighSalary"
+              startId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[HighSalary]" />
+            <path
+              refId="Package\ActiveEmployeeFlow.Paths[LowSalary]"
+              endId="Package\ActiveEmployeeFlow\Low Salary CSV.Inputs[Flat File Destination Input]"
+              name="LowSalary"
+              startId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[LowSalary]" />
+            <path
+              refId="Package\ActiveEmployeeFlow.Paths[MediunSalary]"
+              endId="Package\ActiveEmployeeFlow\Medium Salary CSV.Inputs[Flat File Destination Input]"
+              name="MediunSalary"
+              startId="Package\ActiveEmployeeFlow\Conditional Split.Outputs[MediunSalary]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="238.5,70"
+          Id="Package\ActiveEmployeeFlow"
+          TopLeft="438,279.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ActiveEmployeeFlow">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\ActiveEmployeeFlow\Active Employee"
+          TopLeft="530.5,91" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\ActiveEmployeeFlow\Derived Column"
+          TopLeft="525.5,228" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\ActiveEmployeeFlow\Conditional Split"
+          TopLeft="521.5,353" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\ActiveEmployeeFlow\Low Salary CSV"
+          TopLeft="769,663" />
+        <NodeLayout
+          Size="154.5,42"
+          Id="Package\ActiveEmployeeFlow\High Salary CSV"
+          TopLeft="209,462" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\ActiveEmployeeFlow\Medium Salary CSV"
+          TopLeft="507,562.5" />
+        <EdgeLayout
+          Id="Package\ActiveEmployeeFlow.Paths[Excel Source Output]"
+          TopLeft="605.5,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,95"
+              Start="0,0"
+              End="0,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ActiveEmployeeFlow.Paths[Derived Column Output]"
+          TopLeft="600.75,270">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ActiveEmployeeFlow.Paths[HighSalary]"
+          TopLeft="546.5,395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-260.25,67"
+              Start="0,0"
+              End="-260.25,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="-4,33.5" />
+                  <mssgle:LineSegment
+                    End="-256.25,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-256.25,33.5"
+                    Point2="-260.25,33.5"
+                    Point3="-260.25,37.5" />
+                  <mssgle:LineSegment
+                    End="-260.25,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-154.28693359375,38.5,48.3238671875,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ActiveEmployeeFlow.Paths[MediunSalary]"
+          TopLeft="595.5,395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,167.5"
+              Start="0,0"
+              End="0,160">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,160" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.06193359375,74.1953125,60.1238671875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ActiveEmployeeFlow.Paths[LowSalary]"
+          TopLeft="635.75,395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209.25,268"
+              Start="0,0"
+              End="209.25,260.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.3551797040169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,88.3551797040169"
+                    Point2="0,92.3551797040169"
+                    Point3="4,92.3551797040169" />
+                  <mssgle:LineSegment
+                    End="205.25,92.3551797040169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="205.25,92.3551797040169"
+                    Point2="209.25,92.3551797040169"
+                    Point3="209.25,96.3551797040169" />
+                  <mssgle:LineSegment
+                    End="209.25,260.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="81.62306640625,97.3551797040169,46.0038671875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ActiveEmployeeFlow\Active Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
