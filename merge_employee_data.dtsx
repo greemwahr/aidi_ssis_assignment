@@ -1,0 +1,2786 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/12/2024 12:26:02 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WHITEELEPHANT"
+  DTS:CreatorName="WHITEELEPHANT\sherif"
+  DTS:DTSID="{A5B0F659-ED42-45D0-8617-1DD6C58E9DE3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{F960820C-95ED-4378-A751-7752DF8F96C2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EmpAddr]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C4691849-A85C-4508-A910-0A13BD796AA9}"
+      DTS:ObjectName="EmpAddr">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sheri\Downloads\Dataset\EmpAddr.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AddrId"
+              DTS:DTSID="{4650DFF6-272D-430B-BD33-B6130DC74B92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{5E7C1016-AE06-4D25-A4E1-3C7E1082C9EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{9C4F5ED7-56DB-4612-ACF8-89C4104576CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{718AE11B-9713-4ED0-B2A5-2D7CFF9BE6BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pin"
+              DTS:DTSID="{1D0DC2F1-3EB2-4B64-90ED-25CC20E12F0A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EmpDept]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{37F02972-9B07-434F-A377-DECD00118AB6}"
+      DTS:ObjectName="EmpDept">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sheri\Downloads\Dataset\EmpDept.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{0810F9B9-CA79-413B-83D6-75796CBBC826}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{6A88DAB8-C471-48E6-8B03-1A61A73FD126}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{A9FA6A1D-4752-4017-8209-F169BF6E1552}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sheri\Downloads\Dataset\Employee.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MergedOutputCSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A8C52370-32F2-4211-8E86-2B047073B237}"
+      DTS:ObjectName="MergedOutputCSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sheri\Downloads\Dataset\Outputs\MergedOutputCSV.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="A"
+              DTS:DTSID="{BC8E5826-703A-45EC-A55F-440DCF80C8F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AddrID"
+              DTS:DTSID="{C8D4F134-85DE-4282-A25B-4CC9790C465F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Salary"
+              DTS:DTSID="{FD5905A6-7A0F-4966-ADA7-51679226AEA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOB"
+              DTS:DTSID="{67F4E0B7-0BF9-43DB-BC1C-82AE8230D11B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address"
+              DTS:DTSID="{6FF1D1B1-C392-49FE-A964-C9357EF27803}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{C5780DA8-296E-46F1-BFA1-F932CC687A72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{7AD84EA0-3289-4528-A45A-2DCF4554822E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{2077A8E3-C698-40B6-B85B-D757A5BD1DBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{4727D770-91FE-41F0-83B6-FF8614ACCE43}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{39D2C6FB-0C64-4790-A073-25EEC858691E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{3D77CA92-A84A-40E5-AC65-9D2A67B80753}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pin"
+              DTS:DTSID="{EE6D434C-D582-4A1F-905E-19CBE345469F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\MergedEmployeeFlow"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{9CC0E12B-8285-4354-9BF0-C0DC08D024BD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MergedEmployeeFlow"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\MergedEmployeeFlow\EmpAddr"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="EmpAddr"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MergedEmployeeFlow\EmpAddr.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[EmpAddr]"
+                  connectionManagerRefId="Package.ConnectionManagers[EmpAddr]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[AddrId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[AddrId]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[AddrId]"
+                      name="AddrId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[Pin]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[Pin]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[Pin]"
+                      name="Pin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[AddrId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AddrId" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].ExternalColumns[Pin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Pin" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\EmpDept"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="EmpDept"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MergedEmployeeFlow\EmpDept.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[EmpDept]"
+                  connectionManagerRefId="Package.ConnectionManagers[EmpDept]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].Columns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].Columns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].ExternalColumns[Department]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].Columns[Department]"
+                      name="Department"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].ExternalColumns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\Employee"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Employee"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MergedEmployeeFlow\Employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[ID]"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[Name]"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[Address]"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Address]"
+                      name="Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[DOB]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[DOB]"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[DOB]"
+                      name="DOB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Salary]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[Salary]"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Salary]"
+                      name="Salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[AddrID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[AddrID]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[AddrID]"
+                      name="AddrID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[DeptID]"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[DeptID]"
+                      name="DeptID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[ID]"
+                      dataType="r8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[DOB]"
+                      dataType="date"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[Salary]"
+                      dataType="r8"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[AddrID]"
+                      dataType="r8"
+                      name="AddrID" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].ExternalColumns[DeptID]"
+                      dataType="r8"
+                      name="DeptID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[ID]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[Address]"
+                      name="Address" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[DOB]"
+                      dataType="date"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[DOB]"
+                      name="DOB" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[Salary]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[Salary]"
+                      name="Salary" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[AddrID]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[AddrID]"
+                      name="AddrID" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[DeptID]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[DeptID]"
+                      name="DeptID" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2057"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MergedEmployeeFlow\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MergedOutputCSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[MergedOutputCSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[AddrID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AddrID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AddrID]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[AddrID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Salary]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Department]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Department]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Pin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pin"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pin]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Pin]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AddrID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AddrID" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      dataType="r8"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      dataType="date"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      dataType="r8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Pin" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[A]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="A" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[AddrID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AddrID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[AddrID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[DeptID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DeptID"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[DeptID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Salary]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[Department]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Department]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[AddrId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AddrId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[AddrId]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[Pin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pin"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[Pin]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[DeptID]"
+                      name="DeptID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[DeptID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[AddrID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[AddrID]"
+                      name="AddrID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[AddrID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Salary]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Salary]"
+                      name="Salary">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[Salary]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[DOB]"
+                      dataType="date"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[DOB]"
+                      name="DOB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[DOB]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Address]"
+                      name="Address">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[Address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[ID]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[ID]"
+                      name="ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Department]"
+                      name="Department">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input].Columns[Department]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[State]"
+                      name="State">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[State]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Pin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Pin]"
+                      name="Pin">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input].Columns[Pin]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\Merge Join 1"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[DeptID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DeptID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[DeptID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[AddrID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AddrID"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[AddrID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Salary]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Right Input].Columns[Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\MergedEmployeeFlow\Sort 1.Outputs[Sort Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Right Input].Columns[Department]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department"
+                      lineageId="Package\MergedEmployeeFlow\Sort 1.Outputs[Sort Output].Columns[Department]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[DeptID]"
+                      name="DeptID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[DeptID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[AddrID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[AddrID]"
+                      name="AddrID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[AddrID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Salary]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Salary]"
+                      name="Salary">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[Salary]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[DOB]"
+                      dataType="date"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[DOB]"
+                      name="DOB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[DOB]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Address]"
+                      name="Address">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[Address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[ID]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[ID]"
+                      name="ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input].Columns[ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Department]"
+                      name="Department">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Right Input].Columns[Department]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Address]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[DOB]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Salary]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input].Columns[AddrID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AddrID"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[AddrID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input].Columns[DeptID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DeptID"
+                      lineageId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[DeptID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[ID]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[ID]"
+                      name="ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Address]"
+                      name="Address">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[DOB]"
+                      dataType="date"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[DOB]"
+                      name="DOB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[DOB]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Salary]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[Salary]"
+                      name="Salary">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[Salary]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[AddrID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[AddrID]"
+                      name="AddrID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[AddrID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output].Columns[DeptID]"
+                      name="DeptID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output].Columns[DeptID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\MergedEmployeeFlow\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 1.Inputs[Sort Input].Columns[Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Id"
+                      lineageId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].Columns[Id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 1.Inputs[Sort Input].Columns[Department]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department"
+                      lineageId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].Columns[Department]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 1.Outputs[Sort Output].Columns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 1.Outputs[Sort Output].Columns[Id]"
+                      name="Id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 1.Outputs[Sort Output].Columns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 1.Outputs[Sort Output].Columns[Department]"
+                      name="Department">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output].Columns[Department]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\Sort 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\MergedEmployeeFlow\Sort 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Inputs[Sort Input].Columns[AddrId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AddrId"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[AddrId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Inputs[Sort Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Inputs[Sort Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[State]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Inputs[Sort Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Inputs[Sort Input].Columns[Pin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pin"
+                      lineageId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[Pin]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[AddrId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[AddrId]"
+                      name="AddrId"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[AddrId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[State]"
+                      name="State">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[State]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[Pin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output].Columns[Pin]"
+                      name="Pin">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output].Columns[Pin]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\Sort 3"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 3"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input].Columns[DeptID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DeptID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[DeptID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input].Columns[AddrID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AddrID"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[AddrID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Salary]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[DOB]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Address]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input].Columns[Department]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Department]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[DeptID]"
+                      name="DeptID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[DeptID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[AddrID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[AddrID]"
+                      name="AddrID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[AddrID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Salary]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Salary]"
+                      name="Salary">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Salary]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[DOB]"
+                      dataType="date"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[DOB]"
+                      name="DOB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[DOB]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Address]"
+                      name="Address">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[ID]"
+                      dataType="r8"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[ID]"
+                      name="ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output].Columns[Department]"
+                      name="Department">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output].Columns[Department]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Excel Source Output]"
+              endId="Package\MergedEmployeeFlow\Sort.Inputs[Sort Input]"
+              name="Excel Source Output"
+              startId="Package\MergedEmployeeFlow\Employee.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Flat File Source Output]"
+              endId="Package\MergedEmployeeFlow\Sort 2.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\MergedEmployeeFlow\EmpAddr.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Flat File Source Output1]"
+              endId="Package\MergedEmployeeFlow\Sort 1.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\MergedEmployeeFlow\EmpDept.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Merge Join Output]"
+              endId="Package\MergedEmployeeFlow\Sort 3.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Merge Join Output1]"
+              endId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Merge Join Output"
+              startId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Sort Output]"
+              endId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\MergedEmployeeFlow\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Sort Output1]"
+              endId="Package\MergedEmployeeFlow\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\MergedEmployeeFlow\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Sort Output2]"
+              endId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\MergedEmployeeFlow\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\MergedEmployeeFlow.Paths[Sort Output3]"
+              endId="Package\MergedEmployeeFlow\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\MergedEmployeeFlow\Sort 3.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="273,58.5"
+          Id="Package\MergedEmployeeFlow"
+          TopLeft="414,263.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\MergedEmployeeFlow">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="124.5,42"
+          Id="Package\MergedEmployeeFlow\Employee"
+          TopLeft="811,77" />
+        <NodeLayout
+          Size="107.5,42"
+          Id="Package\MergedEmployeeFlow\Sort 3"
+          TopLeft="825,543" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\MergedEmployeeFlow\Merge Join"
+          TopLeft="576,641.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\MergedEmployeeFlow\Flat File Destination"
+          TopLeft="547.5,761" />
+        <NodeLayout
+          Size="107.5,42"
+          Id="Package\MergedEmployeeFlow\Sort 2"
+          TopLeft="338,546" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\MergedEmployeeFlow\Sort"
+          TopLeft="820,209.5" />
+        <NodeLayout
+          Size="139.5,42"
+          Id="Package\MergedEmployeeFlow\Merge Join 1"
+          TopLeft="628,358" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\MergedEmployeeFlow\EmpAddr"
+          TopLeft="326,379" />
+        <NodeLayout
+          Size="107.5,42"
+          Id="Package\MergedEmployeeFlow\Sort 1"
+          TopLeft="465,215" />
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Merge Join Output]"
+          TopLeft="697.75,400">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="181,143"
+              Start="0,0"
+              End="181,135.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67.5"
+                    Point2="0,71.5"
+                    Point3="4,71.5" />
+                  <mssgle:LineSegment
+                    End="177,71.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="177,71.5"
+                    Point2="181,71.5"
+                    Point3="181,75.5" />
+                  <mssgle:LineSegment
+                    End="181,135.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Flat File Source Output]"
+          TopLeft="389.375,421">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,125"
+              Start="0,0"
+              End="0,117.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,117.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Excel Source Output]"
+          TopLeft="871.125,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90.5"
+              Start="0,0"
+              End="0,83">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Sort Output3]"
+          TopLeft="878.75,585">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-217.416666666667,56.5"
+              Start="0,0"
+              End="-217.416666666667,49">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.4878419452888" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.4878419452888"
+                    Point2="0,33.4878419452888"
+                    Point3="-4,33.4878419452888" />
+                  <mssgle:LineSegment
+                    End="-213.416666666667,33.4878419452888" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-213.416666666667,33.4878419452888"
+                    Point2="-217.416666666667,33.4878419452888"
+                    Point3="-217.416666666667,37.4878419452888" />
+                  <mssgle:LineSegment
+                    End="-217.416666666667,49" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Sort Output2]"
+          TopLeft="391.75,588">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="228.916666666667,53.5"
+              Start="0,0"
+              End="228.916666666667,46">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.709726443769" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.709726443769"
+                    Point2="0,31.709726443769"
+                    Point3="4,31.709726443769" />
+                  <mssgle:LineSegment
+                    End="224.916666666667,31.709726443769" />
+                  <mssgle:CubicBezierSegment
+                    Point1="224.916666666667,31.709726443769"
+                    Point2="228.916666666667,31.709726443769"
+                    Point3="228.916666666667,35.709726443769" />
+                  <mssgle:LineSegment
+                    End="228.916666666667,46" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Sort Output1]"
+          TopLeft="518.75,257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157.083333333333,101"
+              Start="0,0"
+              End="157.083333333333,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.9128277817151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.9128277817151"
+                    Point2="0,59.9128277817151"
+                    Point3="4,59.9128277817151" />
+                  <mssgle:LineSegment
+                    End="153.083333333333,59.9128277817151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="153.083333333333,59.9128277817151"
+                    Point2="157.083333333333,59.9128277817151"
+                    Point3="157.083333333333,63.9128277817151" />
+                  <mssgle:LineSegment
+                    End="157.083333333333,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Sort Output]"
+          TopLeft="869,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-149.333333333333,106.5"
+              Start="0,0"
+              End="-149.333333333333,99">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.1754075124025" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.1754075124025"
+                    Point2="0,63.1754075124025"
+                    Point3="-4,63.1754075124025" />
+                  <mssgle:LineSegment
+                    End="-145.333333333333,63.1754075124025" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-145.333333333333,63.1754075124025"
+                    Point2="-149.333333333333,63.1754075124025"
+                    Point3="-149.333333333333,67.1754075124025" />
+                  <mssgle:LineSegment
+                    End="-149.333333333333,99" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Merge Join Output1]"
+          TopLeft="637.25,683.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.5"
+              Start="0,0"
+              End="0,70">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="122,42"
+          Id="Package\MergedEmployeeFlow\EmpDept"
+          TopLeft="458.5,82.5" />
+        <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Flat File Source Output1]"
+          TopLeft="519.125,124.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90.5"
+              Start="0,0"
+              End="0,83">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\MergedEmployeeFlow\Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
