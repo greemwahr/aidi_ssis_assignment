@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{F960820C-95ED-4378-A751-7752DF8F96C2}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{82613CBD-AADF-49FD-95AB-2F52E747A49A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -153,8 +153,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="A"
-              DTS:DTSID="{BC8E5826-703A-45EC-A55F-440DCF80C8F4}"
+              DTS:ObjectName="DeptID"
+              DTS:DTSID="{670E4D5E-130F-49DB-B133-CCCF501C6DF3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -163,49 +163,52 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AddrID"
-              DTS:DTSID="{C8D4F134-85DE-4282-A25B-4CC9790C465F}"
+              DTS:DTSID="{F09921EB-8258-43C6-AE41-01929B74948D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="5"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Salary"
-              DTS:DTSID="{FD5905A6-7A0F-4966-ADA7-51679226AEA7}"
+              DTS:DTSID="{0DC3A1A3-C2D6-4B06-A119-2F92725A4B97}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="7"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DOB"
-              DTS:DTSID="{67F4E0B7-0BF9-43DB-BC1C-82AE8230D11B}"
+              DTS:DTSID="{1527521E-D97D-4A41-8860-B1B226A4A974}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Address"
-              DTS:DTSID="{6FF1D1B1-C392-49FE-A964-C9357EF27803}"
+              DTS:DTSID="{7758A482-6E26-4EDC-B9C1-1A4075BFE75E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Name"
-              DTS:DTSID="{C5780DA8-296E-46F1-BFA1-F932CC687A72}"
+              DTS:DTSID="{535AD120-1DFE-411C-BAF7-E50F540580A4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="5"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{7AD84EA0-3289-4528-A45A-2DCF4554822E}"
+              DTS:DTSID="{F2F89963-3070-451D-8885-058851EE1E92}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -214,7 +217,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Department"
-              DTS:DTSID="{2077A8E3-C698-40B6-B85B-D757A5BD1DBD}"
+              DTS:DTSID="{03E4D114-3AFB-4A2A-AC9F-1FE456ACEBF2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -223,7 +226,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Country"
-              DTS:DTSID="{4727D770-91FE-41F0-83B6-FF8614ACCE43}"
+              DTS:DTSID="{42700654-D02E-408D-8AA9-ADDB63193C62}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -232,7 +235,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State"
-              DTS:DTSID="{39D2C6FB-0C64-4790-A073-25EEC858691E}"
+              DTS:DTSID="{DB30ED9A-C4C2-4BAA-A599-0ECFEF3DB93F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -241,7 +244,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="City"
-              DTS:DTSID="{3D77CA92-A84A-40E5-AC65-9D2A67B80753}"
+              DTS:DTSID="{18DD5071-B38A-4913-9F7D-97E32A1D203E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -250,7 +253,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pin"
-              DTS:DTSID="{EE6D434C-D582-4A1F-905E-19CBE345469F}"
+              DTS:DTSID="{72BBB58E-C76D-42B8-9C34-45DE0E0C1406}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -816,194 +819,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\MergedEmployeeFlow\Flat File Destination"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="2057"
-              name="Flat File Destination"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\MergedEmployeeFlow\Flat File Destination.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[MergedOutputCSV]"
-                  connectionManagerRefId="Package.ConnectionManagers[MergedOutputCSV]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[AddrID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="AddrID"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AddrID]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[AddrID]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Salary]"
-                      cachedDataType="r8"
-                      cachedName="Salary"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Salary]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[DOB]"
-                      cachedDataType="date"
-                      cachedName="DOB"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[DOB]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Address]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Address"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Address]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Name]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Name"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Name]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Name]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[ID]"
-                      cachedDataType="r8"
-                      cachedName="ID"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[ID]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Department]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Department"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Department]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Department]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Country]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Country"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Country]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[State]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="State"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[State]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[City]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[City]" />
-                    <inputColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].Columns[Pin]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Pin"
-                      externalMetadataColumnId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pin]"
-                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Pin]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AddrID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="AddrID" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
-                      dataType="r8"
-                      name="Salary" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
-                      dataType="date"
-                      name="DOB" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address]"
-                      dataType="wstr"
-                      length="255"
-                      name="Address" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Name]"
-                      dataType="wstr"
-                      length="255"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID]"
-                      dataType="r8"
-                      name="ID" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Department]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Department" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Country" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="State" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pin]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Pin" />
-                    <externalMetadataColumn
-                      refId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[A]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="A" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
               refId="Package\MergedEmployeeFlow\Merge Join"
               componentClassID="Microsoft.MergeJoin"
               contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1015,7 +830,7 @@
                   dataType="System.Int32"
                   description="Specifies the type of join to perform."
                   name="JoinType"
-                  typeConverter="JoinType">0</property>
+                  typeConverter="JoinType">2</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the number of columns in the ordering key."
@@ -1328,7 +1143,7 @@
                   dataType="System.Int32"
                   description="Specifies the type of join to perform."
                   name="JoinType"
-                  typeConverter="JoinType">0</property>
+                  typeConverter="JoinType">2</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the number of columns in the ordering key."
@@ -1540,6 +1355,202 @@
                   <externalMetadataColumns />
                 </output>
               </outputs>
+            </component>
+            <component
+              refId="Package\MergedEmployeeFlow\MergedOutputCSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2057"
+              name="MergedOutputCSV"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MergedEmployeeFlow\MergedOutputCSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MergedOutputCSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[MergedOutputCSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[AddrID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AddrID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[AddrID]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[AddrID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Salary]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[DOB]"
+                      cachedDataType="date"
+                      cachedName="DOB"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[ID]"
+                      cachedDataType="r8"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[Department]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Department]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].Columns[Pin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pin"
+                      externalMetadataColumnId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Pin]"
+                      lineageId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output].Columns[Pin]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[AddrID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AddrID" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Salary]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[DOB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[Pin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Pin" />
+                    <externalMetadataColumn
+                      refId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input].ExternalColumns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DeptID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
             </component>
             <component
               refId="Package\MergedEmployeeFlow\Sort"
@@ -2416,7 +2427,7 @@
               startId="Package\MergedEmployeeFlow\Merge Join 1.Outputs[Merge Join Output]" />
             <path
               refId="Package\MergedEmployeeFlow.Paths[Merge Join Output1]"
-              endId="Package\MergedEmployeeFlow\Flat File Destination.Inputs[Flat File Destination Input]"
+              endId="Package\MergedEmployeeFlow\MergedOutputCSV.Inputs[Flat File Destination Input]"
               name="Merge Join Output"
               startId="Package\MergedEmployeeFlow\Merge Join.Outputs[Merge Join Output]" />
             <path
@@ -2481,9 +2492,9 @@
           Id="Package\MergedEmployeeFlow\Merge Join"
           TopLeft="576,641.5" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\MergedEmployeeFlow\Flat File Destination"
-          TopLeft="547.5,761" />
+          Size="165.5,42"
+          Id="Package\MergedEmployeeFlow\MergedOutputCSV"
+          TopLeft="562.5,763" />
         <NodeLayout
           Size="107.5,42"
           Id="Package\MergedEmployeeFlow\Sort 2"
@@ -2720,18 +2731,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Merge Join Output1]"
-          TopLeft="637.25,683.5">
+          TopLeft="643.125,683.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77.5"
+              EndConnector="0,79.5"
               Start="0,0"
-              End="0,70">
+              End="0,72">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70" />
+                    End="0,72" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
