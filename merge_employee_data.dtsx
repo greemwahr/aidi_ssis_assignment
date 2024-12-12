@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{82613CBD-AADF-49FD-95AB-2F52E747A49A}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{3E957356-C687-42E5-BB3E-31038FD7A3A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2470,7 +2470,7 @@
         <NodeLayout
           Size="273,58.5"
           Id="Package\MergedEmployeeFlow"
-          TopLeft="414,263.5" />
+          TopLeft="396.5,286.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2482,42 +2482,46 @@
         <NodeLayout
           Size="124.5,42"
           Id="Package\MergedEmployeeFlow\Employee"
-          TopLeft="811,77" />
+          TopLeft="714.5,63" />
         <NodeLayout
-          Size="107.5,42"
-          Id="Package\MergedEmployeeFlow\Sort 3"
-          TopLeft="825,543" />
+          Size="122,42"
+          Id="Package\MergedEmployeeFlow\EmpDept"
+          TopLeft="362,68.5" />
         <NodeLayout
           Size="130,42"
           Id="Package\MergedEmployeeFlow\Merge Join"
-          TopLeft="576,641.5" />
-        <NodeLayout
-          Size="165.5,42"
-          Id="Package\MergedEmployeeFlow\MergedOutputCSV"
-          TopLeft="562.5,763" />
+          TopLeft="479.5,627.5" />
         <NodeLayout
           Size="107.5,42"
-          Id="Package\MergedEmployeeFlow\Sort 2"
-          TopLeft="338,546" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\MergedEmployeeFlow\Sort"
-          TopLeft="820,209.5" />
+          Id="Package\MergedEmployeeFlow\Sort 3"
+          TopLeft="728.5,529" />
         <NodeLayout
           Size="139.5,42"
           Id="Package\MergedEmployeeFlow\Merge Join 1"
-          TopLeft="628,358" />
+          TopLeft="531.5,344" />
+        <NodeLayout
+          Size="165.5,42"
+          Id="Package\MergedEmployeeFlow\MergedOutputCSV"
+          TopLeft="466,749" />
+        <NodeLayout
+          Size="107.5,42"
+          Id="Package\MergedEmployeeFlow\Sort 2"
+          TopLeft="241.5,532" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\MergedEmployeeFlow\Sort"
+          TopLeft="723.5,195.5" />
         <NodeLayout
           Size="122,42"
           Id="Package\MergedEmployeeFlow\EmpAddr"
-          TopLeft="326,379" />
+          TopLeft="229.5,365" />
         <NodeLayout
           Size="107.5,42"
           Id="Package\MergedEmployeeFlow\Sort 1"
-          TopLeft="465,215" />
+          TopLeft="368.5,201" />
         <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Merge Join Output]"
-          TopLeft="697.75,400">
+          TopLeft="601.25,386">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2550,8 +2554,30 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\MergedEmployeeFlow.Paths[Flat File Source Output1]"
+          TopLeft="422.625,110.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90.5"
+              Start="0,0"
+              End="0,83">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Flat File Source Output]"
-          TopLeft="389.375,421">
+          TopLeft="292.875,407">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2573,7 +2599,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Excel Source Output]"
-          TopLeft="871.125,119">
+          TopLeft="774.625,105">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2595,7 +2621,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Sort Output3]"
-          TopLeft="878.75,585">
+          TopLeft="782.25,571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2629,7 +2655,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Sort Output2]"
-          TopLeft="391.75,588">
+          TopLeft="295.25,574">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2663,7 +2689,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Sort Output1]"
-          TopLeft="518.75,257">
+          TopLeft="422.25,243">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2697,7 +2723,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Sort Output]"
-          TopLeft="869,251.5">
+          TopLeft="772.5,237.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2731,7 +2757,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\MergedEmployeeFlow.Paths[Merge Join Output1]"
-          TopLeft="643.125,683.5">
+          TopLeft="546.625,669.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2743,32 +2769,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,72" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="122,42"
-          Id="Package\MergedEmployeeFlow\EmpDept"
-          TopLeft="458.5,82.5" />
-        <EdgeLayout
-          Id="Package\MergedEmployeeFlow.Paths[Flat File Source Output1]"
-          TopLeft="519.125,124.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,90.5"
-              Start="0,0"
-              End="0,83">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,83" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

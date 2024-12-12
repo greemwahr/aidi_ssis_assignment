@@ -11,11 +11,23 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package3"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{04DF687F-F8C3-4D01-8F9A-E4C5B0CD598D}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{92501B48-920F-4FE7-A734-AD00438068E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Covid19CM]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{6ACF1FB5-0BEC-4D7C-8E92-D8601C6518A8}"
+      DTS:ObjectName="Covid19CM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sheri\Downloads\Dataset\Outputs\Covid19Output.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Covid19CSV]"
       DTS:CreationName="FLATFILE"
@@ -207,18 +219,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{62D86DA4-7D46-4DF3-9C4E-9B42FE17C234}"
-      DTS:ObjectName="Excel Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\sheri\Downloads\Dataset\Outputs\Covid19.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
@@ -236,6 +236,423 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Covid19DataFlow\Covid19 Output"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Covid19 Output"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Covid19_Output</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Covid19DataFlow\Covid19 Output.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Covid19CM]"
+                  connectionManagerRefId="Package.ConnectionManagers[Covid19CM]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Patient Number]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Patient Number"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Patient Number]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Patient Number]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of State Patient Number]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of State Patient Number"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of State Patient Number]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State Patient Number]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Date Announced]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Date Announced"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Date Announced]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date Announced]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Age Bracket]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Age Bracket"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Age Bracket]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age Bracket]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Gender"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Gender]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Gender]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Detected City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Detected City"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Detected City]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detected City]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Detected District]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Detected District"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Detected District]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detected District]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Detected State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Detected State"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Detected State]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detected State]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of State_code]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of State_code"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of State_code]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State_code]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Current Status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Current Status"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Current Status]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Current Status]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Notes]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Notes"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Notes]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Notes]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Contracted from which Patient (Suspected)]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Contracted from which Patient (Suspected)"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Contracted from which Patient (Suspected)]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Contracted from which Patient (Suspected)]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Nationality]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Nationality"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Nationality]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Nationality]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Type of transmission]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Type of transmission"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Type of transmission]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Type of transmission]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Status Change Date]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Status Change Date"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Status Change Date]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Status Change Date]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Source_1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Source_1"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Source_1]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source_1]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Source_2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Source_2"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Source_2]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source_2]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Source_3]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Source_3"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Source_3]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source_3]" />
+                    <inputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].Columns[Copy of Backup Notes]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Backup Notes"
+                      externalMetadataColumnId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Backup Notes]"
+                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Backup Notes]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Patient Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Patient Number" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[State Patient Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="State Patient Number" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Date Announced]"
+                      dataType="wstr"
+                      length="255"
+                      name="Date Announced" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Age Bracket]"
+                      dataType="wstr"
+                      length="255"
+                      name="Age Bracket" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Detected City]"
+                      dataType="wstr"
+                      length="255"
+                      name="Detected City" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Detected District]"
+                      dataType="wstr"
+                      length="255"
+                      name="Detected District" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Detected State]"
+                      dataType="wstr"
+                      length="255"
+                      name="Detected State" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[State_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="State_code" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Current Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Current Status" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Notes]"
+                      dataType="wstr"
+                      length="255"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Contracted from which Patient (Suspected)]"
+                      dataType="wstr"
+                      length="255"
+                      name="Contracted from which Patient (Suspected)" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Nationality]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nationality" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Type of transmission]"
+                      dataType="wstr"
+                      length="255"
+                      name="Type of transmission" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Status Change Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status Change Date" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Source_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Source_1" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Source_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Source_2" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Source_3]"
+                      dataType="wstr"
+                      length="255"
+                      name="Source_3" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Backup Notes]"
+                      dataType="wstr"
+                      length="255"
+                      name="Backup Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Patient Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Patient Number" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of State Patient Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of State Patient Number" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Date Announced]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Date Announced" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Age Bracket]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Age Bracket" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Detected City]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Detected City" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Detected District]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Detected District" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Detected State]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Detected State" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of State_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of State_code" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Current Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Current Status" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Notes]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Contracted from which Patient (Suspected)]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Contracted from which Patient (Suspected)" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Nationality]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Nationality" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Type of transmission]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Type of transmission" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Status Change Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Status Change Date" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Source_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Source_1" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Source_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Source_2" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Source_3]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Source_3" />
+                    <externalMetadataColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input].ExternalColumns[Copy of Backup Notes]"
+                      dataType="wstr"
+                      length="255"
+                      name="Copy of Backup Notes" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Covid19DataFlow\Covid19 Output.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Covid19DataFlow\Covid19 Output.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Covid19DataFlow\Covid19 Output.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Covid19DataFlow\Covid19 Output.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Covid19DataFlow\Data Conversion"
               componentClassID="Microsoft.DataConvert"
@@ -809,328 +1226,6 @@
                       refId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Covid19DataFlow\Excel Destination"
-              componentClassID="Microsoft.ExcelDestination"
-              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Excel Destination"
-              name="Excel Destination"
-              usesDispositions="true">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Excel_Destination</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Covid19DataFlow\Excel Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Excel Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Patient Number]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Patient Number"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Patient Number]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Patient Number]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of State Patient Number]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of State Patient Number"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[State Patient Number]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State Patient Number]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Date Announced]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Date Announced"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Date Announced]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date Announced]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Age Bracket]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Age Bracket"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Age Bracket]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age Bracket]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Gender]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Gender"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Gender]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Gender]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Detected City]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Detected City"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Detected City]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detected City]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Detected District]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Detected District"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Detected District]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detected District]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Detected State]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Detected State"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Detected State]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detected State]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of State_code]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of State_code"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[State_code]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State_code]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Current Status]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Current Status"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Current Status]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Current Status]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Notes"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Notes]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Notes]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Contracted from which Patient (Suspected)]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Contracted from which Patient (Suspected)"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Contracted from which Patient (Suspected)]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Contracted from which Patient (Suspected)]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Nationality]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Nationality"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Nationality]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Nationality]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Type of transmission]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Type of transmission"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Type of transmission]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Type of transmission]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Status Change Date]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Status Change Date"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Status Change Date]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Status Change Date]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Source_1]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Source_1"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Source_1]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source_1]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Source_2]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Source_2"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Source_2]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source_2]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Source_3]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Source_3"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Source_3]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source_3]" />
-                    <inputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Backup Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Backup Notes"
-                      externalMetadataColumnId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Backup Notes]"
-                      lineageId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Backup Notes]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Patient Number]"
-                      dataType="wstr"
-                      length="255"
-                      name="Patient Number" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[State Patient Number]"
-                      dataType="wstr"
-                      length="255"
-                      name="State Patient Number" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Date Announced]"
-                      dataType="wstr"
-                      length="255"
-                      name="Date Announced" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Age Bracket]"
-                      dataType="wstr"
-                      length="255"
-                      name="Age Bracket" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Gender]"
-                      dataType="wstr"
-                      length="255"
-                      name="Gender" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Detected City]"
-                      dataType="wstr"
-                      length="255"
-                      name="Detected City" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Detected District]"
-                      dataType="wstr"
-                      length="255"
-                      name="Detected District" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Detected State]"
-                      dataType="wstr"
-                      length="255"
-                      name="Detected State" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[State_code]"
-                      dataType="wstr"
-                      length="255"
-                      name="State_code" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Current Status]"
-                      dataType="wstr"
-                      length="255"
-                      name="Current Status" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Contracted from which Patient (Suspected)]"
-                      dataType="wstr"
-                      length="255"
-                      name="Contracted from which Patient (Suspected)" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Nationality]"
-                      dataType="wstr"
-                      length="255"
-                      name="Nationality" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Type of transmission]"
-                      dataType="wstr"
-                      length="255"
-                      name="Type of transmission" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Status Change Date]"
-                      dataType="wstr"
-                      length="255"
-                      name="Status Change Date" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Source_1]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source_1" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Source_2]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source_2" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Source_3]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source_3" />
-                    <externalMetadataColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Backup Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Backup Notes" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Covid19DataFlow\Excel Destination.Outputs[Excel Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Excel Destination Error Output"
-                  synchronousInputId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Covid19DataFlow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Covid19DataFlow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Covid19DataFlow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1734,7 +1829,7 @@
           <paths>
             <path
               refId="Package\Covid19DataFlow.Paths[Data Conversion Output]"
-              endId="Package\Covid19DataFlow\Excel Destination.Inputs[Excel Destination Input]"
+              endId="Package\Covid19DataFlow\Covid19 Output.Inputs[Excel Destination Input]"
               name="Data Conversion Output"
               startId="Package\Covid19DataFlow\Data Conversion.Outputs[Data Conversion Output]" />
             <path
@@ -1762,7 +1857,7 @@
         <NodeLayout
           Size="160,42"
           Id="Package\Covid19DataFlow"
-          TopLeft="465,199.5" />
+          TopLeft="468,295" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1775,10 +1870,6 @@
           Size="151,42"
           Id="Package\Covid19DataFlow\Flat File Source"
           TopLeft="491,229.5" />
-        <NodeLayout
-          Size="159.5,48"
-          Id="Package\Covid19DataFlow\Excel Destination"
-          TopLeft="493,464" />
         <NodeLayout
           Size="156,42"
           Id="Package\Covid19DataFlow\Data Conversion"
@@ -1817,32 +1908,36 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="152.5,42"
+          Id="Package\Covid19DataFlow\Covid19 Output"
+          TopLeft="483.5,474" />
         <EdgeLayout
           Id="Package\Covid19DataFlow.Paths[Data Conversion Output]"
           TopLeft="816,380">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-243.25,84"
+              EndConnector="-256.25,94"
               Start="0,0"
-              End="-243.25,76.5">
+              End="-256.25,86.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38" />
+                    End="0,43" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38"
-                    Point2="0,42"
-                    Point3="-4,42" />
+                    Point1="0,43"
+                    Point2="0,47"
+                    Point3="-4,47" />
                   <mssgle:LineSegment
-                    End="-239.25,42" />
+                    End="-252.25,47" />
                   <mssgle:CubicBezierSegment
-                    Point1="-239.25,42"
-                    Point2="-243.25,42"
-                    Point3="-243.25,46" />
+                    Point1="-252.25,47"
+                    Point2="-256.25,47"
+                    Point3="-256.25,51" />
                   <mssgle:LineSegment
-                    End="-243.25,76.5" />
+                    End="-256.25,86.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1855,7 +1950,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Covid19DataFlow\Excel Destination">
+    design-time-name="Package\Covid19DataFlow\Covid19 Output">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

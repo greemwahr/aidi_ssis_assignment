@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="employee_csv"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{DDBA510F-5146-4965-9697-FAB84CAABAEC}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{B58F8BC5-4189-4F00-AB41-B69F96CA6E0A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -502,7 +502,7 @@
         <NodeLayout
           Size="140,42"
           Id="Package\ETLDataFlow"
-          TopLeft="390,237" />
+          TopLeft="498.5,319.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -514,14 +514,14 @@
         <NodeLayout
           Size="151,42"
           Id="Package\ETLDataFlow\Flat File Source"
-          TopLeft="361.5,179.5" />
+          TopLeft="507,260.5" />
         <NodeLayout
           Size="172,42"
           Id="Package\ETLDataFlow\Flat File Destination"
-          TopLeft="347.5,474" />
+          TopLeft="493,555" />
         <EdgeLayout
           Id="Package\ETLDataFlow.Paths[Flat File Source Output]"
-          TopLeft="435.25,221.5">
+          TopLeft="580.75,302.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{4176F8D8-CA60-4CE1-8362-04984E883D4D}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{513EC5B7-AA1B-496C-988D-804C5BBF9BC9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sheri\Downloads\Dataset\Employee.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sheri\Downloads\Dataset\Employee.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -593,16 +593,20 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.5,42"
-          Id="Package\TaxedSalaryFlow\Excel Source"
-          TopLeft="628,176.5" />
-        <NodeLayout
           Size="136.5,42"
           Id="Package\TaxedSalaryFlow\TaxedSalary"
-          TopLeft="635,377.5" />
+          TopLeft="532,371.5" />
+        <NodeLayout
+          Size="138.5,42"
+          Id="Package\TaxedSalaryFlow\Excel Source"
+          TopLeft="525,170.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\TaxedSalaryFlow\Flat File Destination"
+          TopLeft="519,555" />
         <EdgeLayout
           Id="Package\TaxedSalaryFlow.Paths[Excel Source Output]"
-          TopLeft="700.25,218.5">
+          TopLeft="597.25,212.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -622,13 +626,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\TaxedSalaryFlow\Flat File Destination"
-          TopLeft="622,561" />
         <EdgeLayout
           Id="Package\TaxedSalaryFlow.Paths[Derived Column Output]"
-          TopLeft="705.625,419.5">
+          TopLeft="602.625,413.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
