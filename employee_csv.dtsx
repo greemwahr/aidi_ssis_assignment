@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="WHITEELEPHANT"
   DTS:CreatorName="WHITEELEPHANT\sherif"
-  DTS:DTSID="{AC800AC9-D42F-4F8B-A2F7-84D6174E0D47}"
+  DTS:DTSID="{9E75C0FD-91DE-4DF5-82D2-C3D9CFFC045E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="2057"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="employee_csv"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{910A7FDB-F624-424E-8D88-BBD9DD5B692A}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{DDBA510F-5146-4965-9697-FAB84CAABAEC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -514,14 +514,14 @@
         <NodeLayout
           Size="151,42"
           Id="Package\ETLDataFlow\Flat File Source"
-          TopLeft="358,179.5" />
+          TopLeft="361.5,179.5" />
         <NodeLayout
           Size="172,42"
           Id="Package\ETLDataFlow\Flat File Destination"
-          TopLeft="344,474" />
+          TopLeft="347.5,474" />
         <EdgeLayout
           Id="Package\ETLDataFlow.Paths[Flat File Source Output]"
-          TopLeft="431.75,221.5">
+          TopLeft="435.25,221.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
